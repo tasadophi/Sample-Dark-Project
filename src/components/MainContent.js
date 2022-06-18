@@ -1,5 +1,13 @@
-const MainContent = () => {
-  return <div className="flex justify-center rounded-md m-4 items-center min-h-[16rem] bg-white lg:h-full lg:w-3/4">MainContant</div>;
+import React from "react";
+
+const MainContent = ({ content, contentColor }) => {
+  return (
+    <div
+      className={`flex justify-center shadow-md rounded-md m-4 mb-2 items-center text-lg min-h-[16rem] ${contentColor} lg:h-full lg:w-3/4`}
+    >
+      {content}
+    </div>
+  );
 };
 
-export default MainContent;
+export default React.memo(MainContent);
