@@ -9,13 +9,16 @@ import MainContent from "./components/MainContent";
 import ThemeSwitcher from "./components/ThemeSwitcher";
 
 function App() {
-  const [menuItemProps, setMenuItemProps] = useState({
-    showNav: true,
-    selected: "Campaigns",
-  });
   const [navSelected, setNavSelected] = useState("Google Drive");
   const [content, setContent] = useState("Google Drive");
   const [contentColor, setContentColor] = useState("bg-red-500");
+  const [menuItemProps, setMenuItemProps] = useState({
+    showNav: true,
+    selected: "Campaigns",
+    setContentColor,
+    setContent,
+    setNavSelected,
+  });
 
   return (
     <div className="bg-gray-200 w-full min-h-screen p-4 lg:flex justify-center items-center dark:bg-slate-700">

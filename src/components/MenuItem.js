@@ -2,9 +2,16 @@ import React from "react";
 
 const MenuItem = ({ name, children, props, setProps }) => {
   const clickHandler = () => {
-    if (name === "Campaigns")
+    if (name === "Campaigns") {
+      props.setContent("Campaigns");
+      props.setContentColor("bg-navHoverColor");
+      props.setNavSelected("campaigns");
       setProps({ ...props, showNav: true, selected: "Campaigns" });
-    else setProps({ ...props, showNav: false, selected: "Settings" });
+    } else {
+      props.setContent("Settings");
+      props.setContentColor("bg-green-600");
+      setProps({ ...props, showNav: false, selected: "Settings" });
+    }
   };
 
   const defaultStyle =
