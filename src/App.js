@@ -58,9 +58,12 @@ function App() {
             </div>
             <div className="p-2 lg:ml-auto">
               <SearchBar
-                setContent={setContent}
-                setContentColor={setContentColor}
-                setNavSelected={setNavSelected}
+                props={{
+                  navSelected,
+                  setContent,
+                  setContentColor,
+                  setNavSelected,
+                }}
               />
             </div>
           </div>
