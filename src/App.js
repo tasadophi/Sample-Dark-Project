@@ -1,6 +1,6 @@
 import "./App.css";
 import MenuItem from "./components/MenuItem";
-import { useState } from "react";
+import React, { useState } from "react";
 import NavItem from "./components/NavItem";
 import menuItems from "./utils/getMenuItems";
 import navItems from "./utils/getNavItems";
@@ -12,7 +12,9 @@ function App() {
     showNav: true,
     selected: "Campaigns",
   });
-  const [navSelected, setNavSelected] = useState("");
+  const [navSelected, setNavSelected] = useState("Google Drive");
+  const [content, setContent] = useState("Google Drive");
+  const [contentColor, setContentColor] = useState("bg-red-500");
 
   return (
     <div className="bg-gray-200 w-full min-h-screen p-4 lg:flex justify-center items-center">
@@ -31,7 +33,7 @@ function App() {
           ))}
         </div>
         {/* wrapper divs for desktop ui */}
-        <div className="lg:w-full lg:flex flex-col items-center">
+        <div className="lg:w-full pb-4 lg:flex flex-col items-center">
           <div className="lg:w-full lg:flex lg:p-8">
             {/* NavItems */}
             <div
@@ -43,22 +45,30 @@ function App() {
                 <NavItem
                   key={item.id}
                   name={item.name}
-                  navSelected={navSelected}
-                  setNavSelected={setNavSelected}
+                  props={{
+                    navSelected,
+                    setNavSelected,
+                    setContent,
+                    setContentColor,
+                  }}
                 >
                   {item.icon}
                 </NavItem>
               ))}
             </div>
             <div className="p-2 lg:ml-auto">
-              <SearchBar />
+              <SearchBar
+                setContent={setContent}
+                setContentColor={setContentColor}
+                setNavSelected={setNavSelected}
+              />
             </div>
           </div>
-          <MainContent />
+          <MainContent content={content} contentColor={contentColor} />
         </div>
       </div>
     </div>
   );
 }
 
-export default App;
+export default React.memo(App);
