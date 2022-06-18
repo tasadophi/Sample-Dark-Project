@@ -1,3 +1,5 @@
+import React from "react";
+
 const NavItem = ({ name, children, props }) => {
   const clickHandler = () => {
     const colors = {
@@ -25,4 +27,4 @@ const NavItem = ({ name, children, props }) => {
   );
 };
 
-export default NavItem;
+export default React.memo(NavItem);
