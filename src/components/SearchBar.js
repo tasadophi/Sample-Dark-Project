@@ -5,7 +5,7 @@ const SearchBar = () => {
       <span className="p-2">{<FaSearch />}</span>
       <input
         type="text"
-        className="outline-none border-none px-2 py-1 w-full"
+        className="outline-none border-none p-2 w-full"
         placeholder="Search"
       />
     </div>

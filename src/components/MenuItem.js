@@ -10,7 +10,7 @@ const MenuItem = ({ name, children, props, setProps }) => {
 
   return (
     <div
-      className={`${defaultStyle} p-2 flex gap-1 items-center cursor-pointer rounded-md hover:bg-menuHoverColor hover:text-white`}
+      className={`${defaultStyle} p-2 flex gap-1 items-center cursor-pointer rounded-md hover:bg-menuHoverColor hover:text-white lg:px-6`}
       onClick={clickHandler}
     >
       <span className="text-xl">{children}</span>
