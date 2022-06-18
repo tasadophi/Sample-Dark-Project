@@ -1,7 +1,16 @@
-const NavItem = ({ name, children, navSelected, setNavSelected }) => {
+const NavItem = ({ name, children, props }) => {
   const clickHandler = () => {
+    const colors = {
+      "Google Drive": "bg-red-500",
+      Hubspot: "bg-yellow-500",
+      Pipedrive: "bg-navHoverColor",
+    };
     setNavSelected(name);
+    setContent(name);
+    setContentColor(colors[name]);
   };
+
+  const { navSelected, setNavSelected, setContent, setContentColor } = props;
 
   const defaultStyle = navSelected === name ? "bg-navHoverColor" : "";
 
