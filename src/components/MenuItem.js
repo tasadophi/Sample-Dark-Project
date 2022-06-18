@@ -1,3 +1,5 @@
+import React from "react";
+
 const MenuItem = ({ name, children, props, setProps }) => {
   const clickHandler = () => {
     if (name === "Campaigns")
@@ -19,4 +21,4 @@ const MenuItem = ({ name, children, props, setProps }) => {
   );
 };
 
-export default MenuItem;
+export default React.memo(MenuItem);
