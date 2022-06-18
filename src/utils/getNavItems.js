@@ -17,7 +17,7 @@ const navItems = [
     id: 3,
     name: "Pipedrive",
     icon: (
-      <span className="bg-gray-300 p-1 rounded w-full h-full block">
+      <span className="bg-gray-300 p-1 rounded w-full h-full block dark:text-black">
         <TbLetterP />
       </span>
     ),

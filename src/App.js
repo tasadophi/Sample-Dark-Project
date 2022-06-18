@@ -6,6 +6,7 @@ import menuItems from "./utils/getMenuItems";
 import navItems from "./utils/getNavItems";
 import SearchBar from "./components/SearchBar";
 import MainContent from "./components/MainContent";
+import ThemeSwitcher from "./components/ThemeSwitcher";
 
 function App() {
   const [menuItemProps, setMenuItemProps] = useState({
@@ -17,10 +18,10 @@ function App() {
   const [contentColor, setContentColor] = useState("bg-red-500");
 
   return (
-    <div className="bg-gray-200 w-full min-h-screen p-4 lg:flex justify-center items-center">
-      <div className="container bg-gray-50 rounded-md shadow block lg:flex lg:min-h-[32rem]">
+    <div className="bg-gray-200 w-full min-h-screen p-4 lg:flex justify-center items-center dark:bg-slate-700">
+      <div className="container bg-gray-50 rounded-md shadow block lg:flex lg:min-h-[32rem] dark:bg-slate-600">
         {/* Menu Items */}
-        <div className="flex flex-wrap gap-4 text-base p-2 border-b border-gray-400 lg:flex-col lg:border-b-0 lg:border-r lg:py-10 lg:px-8">
+        <div className="flex flex-wrap gap-4 text-base p-2 border-b border-gray-400 lg:flex-col lg:border-b-0 lg:border-r lg:py-10 lg:px-8 dark:text-white">
           {menuItems.map((item) => (
             <MenuItem
               key={item.id}
@@ -31,6 +32,7 @@ function App() {
               {item.icon}
             </MenuItem>
           ))}
+          <ThemeSwitcher />
         </div>
         {/* wrapper divs for desktop ui */}
         <div className="lg:w-full pb-4 lg:flex flex-col items-center">

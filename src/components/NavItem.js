@@ -14,11 +14,12 @@ const NavItem = ({ name, children, props }) => {
 
   const { navSelected, setNavSelected, setContent, setContentColor } = props;
 
-  const defaultStyle = navSelected === name ? "bg-navHoverColor" : "bg-white";
+  const defaultStyle =
+    navSelected === name ? "bg-navHoverColor dark:bg-slate-500" : "bg-white";
 
   return (
     <div
-      className={`${defaultStyle} flex gap-2 p-2 flex-grow rounded-md shadow-md items-center cursor-pointer hover:bg-navHoverColor`}
+      className={`${defaultStyle} flex gap-2 p-2 flex-grow rounded-md shadow-lg items-center cursor-pointer hover:bg-navHoverColor dark:hover:bg-slate-500 dark:bg-slate-700 dark:text-white`}
       onClick={clickHandler}
     >
       <span>{children}</span>

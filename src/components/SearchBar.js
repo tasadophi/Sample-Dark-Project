@@ -16,12 +16,12 @@ const SearchBar = ({ props }) => {
   }, [navSelected]);
 
   return (
-    <div className="bg-white flex items-center rounded-md border border-gray-200 shadow-md w-full">
+    <div className="bg-white flex items-center rounded-md border border-gray-200 shadow-md w-full dark:bg-slate-700 dark:border-0 dark:text-white">
       <span className="p-2">{<FaSearch />}</span>
       <input
         type="text"
         value={value}
-        className="outline-none border-none p-2 w-full"
+        className="outline-none border-none p-2 w-full bg-inherit"
         placeholder="Search"
         onChange={changeHandler}
       />
