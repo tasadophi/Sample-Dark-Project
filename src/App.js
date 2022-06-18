@@ -4,6 +4,7 @@ import { useState } from "react";
 import NavItem from "./components/NavItem";
 import menuItems from "./utils/getMenuItems";
 import navItems from "./utils/getNavItems";
+import SearchBar from "./components/SearchBar";
 
 function App() {
   const [menuItemProps, setMenuItemProps] = useState({
@@ -15,6 +16,7 @@ function App() {
   return (
     <div className="bg-gray-200 w-screen flex flex-col h-screen px-4">
       <div className="container bg-gray-50 rounded-md shadow mt-4">
+        {/* Menu Items */}
         <div className="flex gap-4 text-base p-2 border-b border-gray-400">
           {menuItems.map((item) => (
             <MenuItem
@@ -27,6 +29,7 @@ function App() {
             </MenuItem>
           ))}
         </div>
+        {/* NavItems */}
         <div
           className={`${
             menuItemProps.showNav ? "flex" : "hidden"
@@ -42,6 +45,7 @@ function App() {
               {item.icon}
             </NavItem>
           ))}
+          <SearchBar />
         </div>
       </div>
     </div>
